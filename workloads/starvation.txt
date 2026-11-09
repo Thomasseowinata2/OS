@@ -1,0 +1,13 @@
+# This file starves a process.
+#
+# With -p prio the nice 0 jobs keep arriving and the nice 9 job never
+# reaches the CPU. Its response time grows without limit. With -p mlfq the
+# periodic priority boost gives it the CPU. Real feedback schedulers include
+# such a boost for this reason.
+#
+# name            cpu_ms  io_count  io_ms  nice  arrival_ms
+urgent-1             300         0      0     0           0
+urgent-2             300         0      0     0          60
+urgent-3             300         0      0     0         120
+urgent-4             300         0      0     0         180
+background           200         0      0     9           0

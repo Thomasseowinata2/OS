@@ -1,0 +1,11 @@
+# A batch machine. Four long compute jobs and almost no I/O.
+#
+# Round robin shares the CPU evenly, but each job finishes late. FCFS
+# finishes the first job much earlier and the last job much later. Compare
+# the turnaround times with -p fcfs and -p rr.
+#
+# name            cpu_ms  io_count  io_ms  nice  arrival_ms
+matrix-multiply      600         0      0     0           0
+ray-trace            500         1     60     0           0
+compress             400         0      0     0         100
+checksum             300         0      0     0         200

@@ -1,0 +1,11 @@
+# Almost nothing but I/O.
+#
+# The CPU stays idle for most of the run, because every process waits for a
+# device at the same time. One CPU can serve many users for this reason.
+# Each user spends most of the time waiting.
+#
+# name            cpu_ms  io_count  io_ms  nice  arrival_ms
+user-1                60        10     80     0           0
+user-2                60        10     80     0          20
+user-3                60        10     80     0          40
+user-4                60        10     80     0          60

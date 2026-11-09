@@ -1,0 +1,11 @@
+# An interactive machine. One program only computes. Three programs spend
+# most of their life in I/O.
+#
+# Run this file with -p fcfs and then with -p mlfq. Compare the response
+# times. The difference is the argument for time sharing.
+#
+# name            cpu_ms  io_count  io_ms  nice  arrival_ms
+cpu-hog              900         0      0     3           0
+shell                 90        10     40     0           0
+text-editor          150         8     60     0          40
+file-indexer         300         5     50     2         100
